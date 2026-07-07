@@ -6,7 +6,9 @@
 #include<cstdio>
 #include<cstdlib>
 
-extern int gettok(){
+int gettok(){
+  std::string IdentifierStr;
+  double NumVal;
    static int LastChar = ' ';
 
    // skipping white spaces
@@ -16,17 +18,16 @@ extern int gettok(){
 
    // identifier  [a-zA-Z][a-zA-Z0-9]*
    if(isalpha(LastChar)){
-    IdentiferStr = LastChar;
+    IdentifierStr = LastChar;
     while(isalnum(LastChar = getchar())){
-        IdentiferStr+=LastChar;
+        IdentifierStr+=LastChar;
     }
 
-    if(IdentiferStr == "def") return tok_def;
-    if(IdentiferStr == "extern") return tok_extern;
-    return tok_indentifer;
+    if(IdentifierStr == "def") return tok_def;
+    if(IdentifierStr == "extern") return tok_extern;
+    return tok_identifier;
    }
 
-   
     // number: [0-9.]+
    if (isdigit(LastChar) || LastChar == '.') {  
     std::string NumStr;

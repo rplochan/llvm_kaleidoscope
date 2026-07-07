@@ -17,7 +17,7 @@ enum Token{
     tok_def = -2,     
     tok_extern = -3,
 
-    tok_indentifer = -4, //[a-zA-Z][a-zA-Z0-9]*
+    tok_identifier = -4, //[a-zA-Z][a-zA-Z0-9]*
     tok_number = -5      //[0-9.]+
 };
 
