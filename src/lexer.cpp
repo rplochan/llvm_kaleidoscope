@@ -1,5 +1,5 @@
-#include<token.h>
-#include<lexer.h>
+#include"../include/token.h"
+#include"../include/lexer.h"
 
 #include<string>
 #include<cctype>
@@ -29,7 +29,7 @@ int gettok(){
    }
 
     // number: [0-9.]+
-   if (isdigit(LastChar) || LastChar == '.') {  
+   if (isdigit(LastChar) || LastChar == '.') {
     std::string NumStr;
     do {
         NumStr += LastChar;
